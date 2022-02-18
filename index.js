@@ -57,7 +57,7 @@ app.post('/addRec', async(req,res) => {
     var rheight = req.body.height
   }
 
-  var rperimeter = (rwidth + rheight)*2;
+  var rperimeter = rwidth*2 + rheight*2;
   var rarea = rwidth * rheight;
   try{
     const result = await pool.query(`INSERT INTO rectangles (name, width, height, color, perimeter, area)
