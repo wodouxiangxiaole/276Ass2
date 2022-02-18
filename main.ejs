@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/mainPage.css">
+</head>
+
+<body>
+    <div id="centralPart" >
+    <% rows.forEach(function(r) { %>
+    
+    <h2 style="position: relative; top: 30px; left: 40px;">
+        The Detail of Rectangle <%= r.name %>
+    </h2>
+
+    <svg width="200px" heiht="100px" style="position:relative; left:40px; top:40px;">
+        <rect width="<%= r.width %>" height="<%= r.height %>"  style="fill: <%= r.color %> "  ></rect>
+    </svg>
+
+    <table border="1" id="tb" style="position: relative; left: 40px;">
+            <tr>
+                <td width="100"> Name </td>
+                <td width="100"> <%= r.name %> </td>
+            </tr>
+            <tr>
+                <td> Width </td>
+                <td> <%= r.width %> </td>
+            </tr>
+            <tr>
+                <td> Height </td>
+                <td> <%= r.height %> </td>
+            </tr>
+            <tr>
+                <td> Color </td>
+                <td> <%= r.color %> </td>
+            </tr>
+            <tr>
+                <td> Perimeter </td>
+                <td> <%= r.perimeter %> </td>
+            </tr>
+            <tr>
+                <td> Area </td>
+                <td> <%= r.area %> </td>
+            </tr>
+    </table>
+
+    <h3 style="position: relative; left: 40px;">Update Rectangle Data</h3>
+    <form style="position: relative; left: 40px;" action="/:<%= r.id %>" method="post" id="form">
+        <input type="text" name="name" id="rectangleName" placeholder="name" required> <br>
+        <input type="text" name="color" id="rectangleColor" placeholder="color" required> <br>
+        <input type="number" name="width" id="rectangleWidth" placeholder="width" min="0" required> <br>
+        <input type="number" name="height" id="rectangleHeight" placeholder="height" min="0" required> <br>
+        <input type="submit" id="updateRec" name="updateRec" value="Update Rectangle" > 
+    </form>
+    <% }); %>
+</div>
+</body>
+
+</html>

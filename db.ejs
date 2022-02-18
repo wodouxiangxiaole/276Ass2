@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+  </script>
+  <script src="script.js" text="text/javascript" defer>
+    
+  </script>
+
+  <link rel="stylesheet" href="stylesheets/db.css">
+</head>
+
+<body>
+
+<div id="centralPart">
+  <h2>Rectangles</h2>
+
+  <table border="1" id="tb" style="position: relative;left: 30px; top: 30px;">
+    <tr>
+      <td width="50"> </td>
+      <td width="100"> name </td>
+      <td width="100"> color</td>
+    </tr>
+    <ul>
+      <% rows.forEach(function(r) { %>
+        <tr>
+          <td>
+            <%= r.id %>
+          </td>
+          <td>
+            <a href= "<%=r.id%>">
+              <%= r.name %>
+            </a>
+          </td>
+          <td>
+            <%= r.color %>
+          </td>
+        </tr>
+      <% }); %>
+    </ul>
+  </table>
+
+<form style="position:relative; left:30px; top: 60px;" action="/addRec" method="post" >
+  <input type="text" name="name" id="rectangleName" placeholder="name" required> <br>
+  <input type="text" name="color" id="rectangleColor" placeholder="color" required> <br>
+  <input type="number" name="width" id="rectangleWidth" placeholder="width" min="0" > <br>
+  <input type="number" name="height" id="rectangleHeight" placeholder="height" min="0" > <br>
+  <input type="submit"  name="addRectangle" value="Add Rectangle" id="addRec">
+</form>
+
+<form style="position:relative; left:30px; top:80px" action="/deleteRec" method="post">
+  <input type="number" name="rid" placeholder="id number"> <br>
+  <input type="submit" id="deleteRec" name="deleteRectangle" value="Delete Rectangle Using ID">
+
+</form>
+</div>
+
+</body>
+</html>
+

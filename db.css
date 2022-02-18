@@ -1,0 +1,31 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 0px;
+    margin-left: 30pt;
+    background-color: rgb(155, 155, 238);
+    margin-bottom: 10pt;
+    margin-right: 30pt;
+}
+
+#centralPart{
+    background-color: rgb(204, 221, 236);
+    width: 830px;
+    height: 550px;
+}
+#tb {
+    border-collapse: collapse;
+    font-weight: 200;
+    width: 300px;
+    height: 200px;
+    background-color: rgb(204, 221, 236);
+}
+
+#deleteRec{
+    height: 40px;
+    background-color: rgb(235, 57, 57);
+}
+
+#addRec{
+    height: 40px;
+    background-color: rgb(235, 57, 57);
+}
